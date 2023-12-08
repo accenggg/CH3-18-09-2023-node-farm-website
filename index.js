@@ -82,7 +82,9 @@ const server = http.createServer((req, res) => {
 
   // PRODUCT PAGE
   else if (pathName === "/product") {
-    console.log(query);
+    if (!query) {
+      res.end("<h1>Url Kosong</h1>");
+    }
     res.writeHead(200, {
       "Content-Type": "text/html",
     });
